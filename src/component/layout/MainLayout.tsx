@@ -1,23 +1,10 @@
-import React, { createElement } from "react";
-import {
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-} from "@ant-design/icons";
+import React from "react";
+
 import { Layout, Menu } from "antd";
+import { Outlet } from "react-router-dom";
+import { adminSidebarItems } from "../../routes/admin.routes";
 
 const { Header, Content, Sider } = Layout;
-
-const items = [
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-  UserOutlined,
-].map((icon, index) => ({
-  key: String(index + 1),
-  icon: createElement(icon),
-  label: `nav ${index + 1}`,
-}));
 
 const MainLayout: React.FC = () => {
   return (
@@ -32,12 +19,25 @@ const MainLayout: React.FC = () => {
           console.log(collapsed, type);
         }}
       >
-        <div className="demo-logo-vertical" />
+        <div>
+          <h1
+            style={{
+              color: "white",
+              textAlign: "center",
+              alignItems: "center",
+              justifyContent: "center",
+              display: "flex",
+              height: "60px",
+            }}
+          >
+            Logo
+          </h1>
+        </div>
         <Menu
           theme="dark"
           mode="inline"
           defaultSelectedKeys={["4"]}
-          items={items}
+          items={adminSidebarItems}
         />
       </Sider>
       <Layout>
@@ -50,7 +50,7 @@ const MainLayout: React.FC = () => {
               minHeight: 360,
             }}
           >
-            <th>The main content should go hare</th>
+            <Outlet />
           </div>
         </Content>
       </Layout>
