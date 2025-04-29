@@ -17,3 +17,9 @@ export type TSidebarItem = {
   label: ReactNode;
   children?: TSidebarItem[];
 };
+
+export type Role = {
+  student: string;
+  faculty: string;
+  admin: string;
+};
