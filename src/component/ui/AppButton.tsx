@@ -21,7 +21,7 @@ const AppButton = ({
 
   const variantStyles = {
     primary: "bg-[#0074D9] hover:bg-[#0066CC] text-white",
-    outlined: "border border-[#0074D9] text-[#0074D9] hover:bg-[#0074D9]/10",
+    outlined: "border border-green-300 text-black hover:bg-[#0074D9]/1",
     text: "text-[#0074D9] hover:underline",
   };
 

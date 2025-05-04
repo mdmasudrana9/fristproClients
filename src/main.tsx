@@ -12,8 +12,9 @@ createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <RouterProvider router={router} /> //when using react-router-dom v6.4 or
-        later
+        <RouterProvider router={router} />
+        {/* when using react-router-dom v6.4 or
+        later */}
       </PersistGate>
       <Toaster />
     </Provider>
