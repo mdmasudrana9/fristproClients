@@ -1,4 +1,4 @@
-import React, { type ButtonHTMLAttributes, type ReactNode } from "react";
+import { type ButtonHTMLAttributes, type ReactNode } from "react";
 
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   label: string;

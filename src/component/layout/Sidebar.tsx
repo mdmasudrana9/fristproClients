@@ -4,6 +4,9 @@ import { adminPaths } from "../../routes/admin.routes";
 import { facultyPaths } from "../../routes/faculty.routes";
 import { studentPaths } from "../../routes/student.routes";
 
+import { useAppSelector } from "../../redux/hooks";
+import { selectUser } from "../../redux/features/auth/authSlice";
+
 const { Sider } = Layout;
 
 const UserRole = {
@@ -12,7 +15,9 @@ const UserRole = {
   STUDENT: "student",
 };
 const Sidebar = () => {
-  const role = "faculty"; // This should be dynamically set based on the logged-in user role
+  const user = useAppSelector(selectUser);
+
+  const role = user!.role; // This should be dynamically set based on the logged-in user role
   let sidebarItems;
   switch (role) {
     case UserRole.ADMIN:
