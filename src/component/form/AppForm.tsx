@@ -20,9 +20,14 @@ const AppForm = ({
     formConfig["defaultValues"] = defaultValues;
   }
   const methods = useForm(formConfig);
+
+  const submit = (data: any) => {
+    onSubmit(data);
+    methods.reset();
+  };
   return (
     <FormProvider {...methods}>
-      <form className={className} onSubmit={methods.handleSubmit(onSubmit)}>
+      <form className={className} onSubmit={methods.handleSubmit(submit)}>
         {children}
       </form>
       ;

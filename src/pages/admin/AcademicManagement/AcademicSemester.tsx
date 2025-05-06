@@ -2,8 +2,9 @@
 import { useMemo, useState, Key } from "react";
 import { useGetAllSemesterQuery } from "../../../redux/features/admin/academicManagement.Api";
 import { EditOutlined, DeleteOutlined } from "@ant-design/icons";
-import { Button, Popconfirm, Space, Spin, TableProps } from "antd";
+import { Button, Popconfirm, Space, TableProps } from "antd";
 import AppTable from "../../../component/ui/AppTable";
+import AppTableLoader from "../../../component/ui/AppTableLoader";
 
 interface DataType {
   key: string;
@@ -107,7 +108,7 @@ const AcademicSemester = () => {
   return (
     <div className="p-6">
       {isLoading ? (
-        <Spin />
+        <AppTableLoader />
       ) : (
         <AppTable
           data={data?.data.result || []}
